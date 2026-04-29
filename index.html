@@ -369,7 +369,6 @@
     <p class="subtitle">
       LUCID encrypts Ethereum's mempool. Same-slot LUCID lets builders decrypt and include
       protected transactions in the same slot — no extra latency, no compromises.
-      Conditional commitments replace the slot boundary, and the design works at any slot time.
     </p>
     <div class="hero-links">
       <a href="https://ethresear.ch/t/same-slot-decryption-for-lucid-optional-n-execution-with-n-1-fallback/24576" class="btn-primary" target="_blank">Read the proposal →</a>
@@ -444,16 +443,14 @@
 
     <div style="margin-top: 24px; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;">
       <p style="font-size: 13px; color: var(--text-dim); margin: 0 0 12px 0;">
-        <strong style="color: var(--orange);">*</strong> <strong style="color: var(--text);">Steps 3 and 4 are out-of-protocol.</strong>
-        The builder's economic commitment and key publisher release happen on an out-of-protocol commitment network — not enshrined in consensus.
-        This is by design: the commitment layer operates <em>before</em> the ABB is constructed, breaking the circular dependency between builder and key publisher 
-        without requiring consensus changes beyond one minimal spec addition (<code>decrypted_transactions</code> carrying same-slot STs).
-        Enforcement is hybrid: the commitment is slashable via an on-chain fraud proof, while FOCIL provides an in-protocol backstop that mandates ST inclusion regardless.
+        <strong style="color: var(--orange);">*</strong> <strong style="color: var(--text);">Steps 3 and 4 happen out-of-protocol.</strong>
+        The commitment layer operates <em>before</em> the ABB, breaking the builder/key-publisher circular dependency.
+        Enforcement is hybrid: slashable commitments + FOCIL as the in-protocol backstop.
       </p>
       <p style="font-size: 13px; color: var(--text-dim); margin: 0;">
         <strong style="color: var(--cyan);">†</strong> <strong style="color: var(--text);">Direct builder submission.</strong>
-        FOCIL provides the censorship-resistance backstop, but latency-sensitive transactions can also be sent directly to builders — similar to private order flow today, 
-        but the ST remains encrypted so builders cannot inspect contents before committing. Both paths can be used simultaneously: direct-to-builder for speed, FOCIL for the CR guarantee.
+        Latency-sensitive STs can go straight to builders — still encrypted, so contents stay hidden until commit.
+        Direct-to-builder for speed, FOCIL for the CR guarantee.
       </p>
     </div>
   </div>
