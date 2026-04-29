@@ -353,6 +353,7 @@
   <div class="container">
     <a href="#" class="logo">same-slot <span>LUCID</span></a>
     <div class="links">
+      <a href="#flow">Same-slot flow</a>
       <a href="#process-detail">How it works</a>
       <a href="#why">Why same-slot</a>
       <a href="#properties">Properties</a>
@@ -378,7 +379,7 @@
 </header>
 
 <!-- ============ PROCESS VISUAL ============ -->
-<div class="process-section">
+<div class="process-section" id="flow">
   <div class="container">
     <div class="process-title">The same-slot flow</div>
 
@@ -435,13 +436,11 @@
       </div>
     </div>
 
-    <div class="process-fallback-wrap">
-      <div class="process-fallback">
-        <p><strong>Fallback:</strong> If the builder doesn't commit or keys arrive late, standard N+1 decryption applies. No degradation — just latency regression.</p>
-      </div>
-    </div>
-
-    <div style="margin-top: 24px; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;">
+    <div style="margin-top: 32px; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;">
+      <p style="font-size: 13px; color: var(--text-dim); margin: 0 0 12px 0;">
+        <strong style="color: var(--accent);">Fallback.</strong>
+        If the builder doesn't commit or keys arrive late, standard N+1 decryption applies.
+      </p>
       <p style="font-size: 13px; color: var(--text-dim); margin: 0 0 12px 0;">
         <strong style="color: var(--orange);">*</strong> <strong style="color: var(--text);">Steps 3 and 4 happen out-of-protocol.</strong>
         The commitment layer operates <em>before</em> the ABB, breaking the builder/key-publisher circular dependency.
