@@ -3,10 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Same-Slot LUCID</title>
-  <meta name="description" content="Same-slot encrypted execution for Ethereum. Conditional commitments let builders decrypt and include protected transactions in the same slot — no extra latency, no compromises.">
+  <title>Encrypted mempool. Same-slot execution. — Same-Slot LUCID</title>
+  <meta name="description" content="Same-slot execution for Ethereum's encrypted mempool (EIP-8184). Conditional commitments let builders decrypt and include protected transactions in the same slot — no extra latency, no compromises.">
+  <meta name="keywords" content="encrypted mempool, LUCID, EIP-8184, same-slot execution, Ethereum, mev protection, sealed transactions, FOCIL, conditional commitments, threshold encryption, primev">
+  <meta name="author" content="Primev">
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="canonical" href="https://lucid-page-ashy.vercel.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Same-Slot LUCID">
+  <meta property="og:title" content="Encrypted mempool. Same-slot execution.">
+  <meta property="og:description" content="Same-slot execution for Ethereum's encrypted mempool (EIP-8184). Conditional commitments let builders decrypt and include protected transactions in the same slot — no extra latency, no compromises.">
+  <meta property="og:url" content="https://lucid-page-ashy.vercel.app/">
+  <meta property="og:image" content="https://lucid-page-ashy.vercel.app/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Same-Slot LUCID — five-step flow: user encrypts, network propagates, builder commits and pays, key publishers release keys, builder decrypts and includes.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Encrypted mempool. Same-slot execution.">
+  <meta name="twitter:description" content="Same-slot execution for Ethereum's encrypted mempool (EIP-8184). Conditional commitments let builders decrypt and include protected transactions in the same slot — no extra latency, no compromises.">
+  <meta name="twitter:image" content="https://lucid-page-ashy.vercel.app/og.png">
+  <meta name="twitter:image:alt" content="Same-Slot LUCID flow diagram">
+  <meta name="twitter:site" content="@primev_xyz">
+  <meta name="twitter:creator" content="@primev_xyz">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Encrypted mempool. Same-slot execution.",
+    "description": "Same-slot execution for Ethereum's encrypted mempool (EIP-8184). Conditional commitments let builders decrypt and include protected transactions in the same slot.",
+    "author": {
+      "@type": "Organization",
+      "name": "Primev",
+      "url": "https://primev.xyz"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Primev",
+      "url": "https://primev.xyz"
+    },
+    "image": "https://lucid-page-ashy.vercel.app/og.png",
+    "url": "https://lucid-page-ashy.vercel.app/",
+    "about": [
+      { "@type": "Thing", "name": "Encrypted Mempool" },
+      { "@type": "Thing", "name": "EIP-8184" },
+      { "@type": "Thing", "name": "Ethereum" },
+      { "@type": "Thing", "name": "MEV protection" }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #0a0a0f;
@@ -56,7 +110,10 @@
       display: inline-block; padding: 6px 14px;
       background: rgba(129, 140, 248, 0.1); border: 1px solid rgba(129, 140, 248, 0.2);
       border-radius: 20px; font-size: 13px; font-weight: 500; color: var(--accent); margin-bottom: 24px;
+      text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease;
     }
+    a.hero-badge:hover { background: rgba(129, 140, 248, 0.18); border-color: rgba(129, 140, 248, 0.45); }
+    .hero .badge .arrow { font-size: 11px; opacity: 0.7; margin-left: 4px; }
     .hero h1 {
       font-size: clamp(36px, 5vw, 56px); font-weight: 800;
       line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px;
@@ -307,12 +364,12 @@
 <!-- HERO -->
 <header class="hero">
   <div class="container">
-    <div class="badge">EIP-8184 · Encrypted Mempool</div>
-    <h1>Same-slot execution.<br><em>No compromises.</em></h1>
+    <a class="badge hero-badge" href="https://eips.ethereum.org/EIPS/eip-8184" target="_blank" rel="noopener">EIP-8184 · Encrypted Mempool <span class="arrow">↗</span></a>
+    <h1><em>Encrypted mempool.</em><br>Same-slot execution.</h1>
     <p class="subtitle">
-      LUCID encrypts Ethereum's mempool. Same-slot LUCID lets builders decrypt and include 
-      protected transactions in the same slot — conditional commitments replace the slot boundary, 
-      and the design works at any slot time.
+      LUCID encrypts Ethereum's mempool. Same-slot LUCID lets builders decrypt and include
+      protected transactions in the same slot — no extra latency, no compromises.
+      Conditional commitments replace the slot boundary, and the design works at any slot time.
     </p>
     <div class="hero-links">
       <a href="https://ethresear.ch/t/same-slot-decryption-for-lucid-optional-n-execution-with-n-1-fallback/24576" class="btn-primary" target="_blank">Read the proposal →</a>

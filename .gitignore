@@ -1,1 +1,8 @@
 .vercel
+.DS_Store
+.claude/
+node_modules/
+package.json
+package-lock.json
+render.mjs
+og.html
